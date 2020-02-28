@@ -1,0 +1,112 @@
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable type="KIND_SpriteKind" id="w^#0IqfI4UzN)CRa`]YH">Player</variable><variable type="KIND_SpriteKind" id="_v7UY+8fbSeNO`1@0Z@M">Projectile</variable><variable type="KIND_SpriteKind" id="^D(@CJw3V]m,S^WhV#5V">Food</variable><variable type="KIND_SpriteKind" id="NI)4UoVYqi`ycaU!(p1!">Enemy</variable><variable type="BLOCKLY_TILESET_TYPE" id="3:08#-y`/WF#dE?GyZ!e">0;16;16;0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</variable><variable id="o%u?)=/Dczl0N[EZ;Gc6">list</variable><variable id="1U;)b9u)-}h427TcCye/">nextLevel</variable><variable id="#8b8b6ASQxBZG;1FIb`k">mySprite</variable><variable id="sc.:xzv]:wobVpJ*!X[y">player1</variable><variable id="#GTP3Y3Yl9TV@n|$.#V^">value</variable><variable id="xr9O2H)6i{KnF[`pR8N-">myTile</variable></variables><block type="function_definition" x="110" y="-150"><mutation name="buildLevel" functionid="UoD#2MjbHR[?:I5)J+VK"/><field name="function_name">buildLevel</field><statement name="STACK"><block type="controls_if"><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="logic_compare"><field name="OP">EQ</field><value name="A"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="variables_get"><field name="VAR" id="1U;)b9u)-}h427TcCye/">nextLevel</field></block></value><value name="B"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="lists_length"><value name="VALUE"><block type="variables_get"><field name="VAR" id="o%u?)=/Dczl0N[EZ;Gc6">list</field></block></value></block></value></block></value><statement name="DO0"><block type="gameOver"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="false"></mutation><value name="win"><shadow type="toggleWinLose"><field name="win">false</field></shadow></value></block></statement><next><block type="gamesettilemap"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="false"></mutation><value name="map"><shadow type="tilemap_image_picker"><field name="img">img`
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+`</field></shadow><block type="lists_index_get"><value name="LIST"><block type="variables_get"><field name="VAR" id="o%u?)=/Dczl0N[EZ;Gc6">list</field></block></value><value name="INDEX"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="variables_get"><field name="VAR" id="1U;)b9u)-}h427TcCye/">nextLevel</field></block></value></block></value><next><block type="pxt_controls_for_of"><value name="VAR"><shadow type="variables_get_reporter"><field name="VAR" id="#GTP3Y3Yl9TV@n|$.#V^">value</field></shadow></value><value name="LIST"><shadow type="variables_get"><field name="VAR" id="o%u?)=/Dczl0N[EZ;Gc6">list</field></shadow></value><statement name="DO"><block type="legacyplaceontile"><value name="tile"><block type="variables_get"><field name="VAR" id="#GTP3Y3Yl9TV@n|$.#V^">value</field></block></value><value name="sprite"><block type="variables_get"><field name="VAR" id="sc.:xzv]:wobVpJ*!X[y">player1</field></block></value></block></statement><next><block type="variables_change"><field name="VAR" id="1U;)b9u)-}h427TcCye/">nextLevel</field><value name="VALUE"><shadow type="math_number"><field name="NUM">1</field></shadow></value></block></next></block></next></block></next></block></statement></block><block type="spritesollisions" x="670" y="210"><value name="HANDLER_DRAG_PARAM_sprite"><shadow type="argument_reporter_custom"><mutation typename="Sprite"/><field name="VALUE">sprite</field></shadow></value><value name="kind"><shadow type="spritekind"><field name="MEMBER">Player</field></shadow></value><value name="tile"><shadow type="colorindexpicker"><field name="index">7</field></shadow></value><statement name="HANDLER"><block type="function_call"><mutation name="buildLevel" functionid="UoD#2MjbHR[?:I5)J+VK"/></block></statement></block><block type="pxt-on-start" x="95" y="355"><statement name="HANDLER"><block type="variables_set"><field name="VAR" id="o%u?)=/Dczl0N[EZ;Gc6">list</field><value name="VALUE"><block type="lists_create_with"><mutation items="3"/><value name="ADD0"><shadow type="math_number"><field name="NUM">1</field></shadow><block type="screen_image_picker"><field name="img">img`
+. . . . . f f f f f f . . . . . 
+. . . . f f 1 1 1 1 f f f . . . 
+. . . . f 1 1 1 1 1 1 1 f f . . 
+. . . . f 1 1 f 1 1 f 1 1 f f . 
+. . . . f 1 f 1 1 1 1 f 1 1 f . 
+. . . . f 1 f f f f f f 1 1 f . 
+. . . . f 1 1 1 1 1 1 1 1 f f . 
+. . . . . f f f 1 1 1 1 f f . . 
+. . . . . . . f f f f f f . . . 
+. . . . . . . . . f . . . . . . 
+. . . . . . f f f f f f f f . . 
+. . . . . . . . f f . . . . . . 
+. . . . . . . . f f . . . . . . 
+. . . . . . f f f f f . . . . . 
+. . . . . . f . . . f f . . . . 
+. . . . . f f . . . . f . . . . 
+`</field></block></value><value name="ADD1"><shadow type="math_number"><field name="NUM">2</field></shadow><block type="screen_image_picker"><field name="img">img`
+. . . . . f f f f f f . . . . . 
+. . . . f f 1 1 1 1 f f f . . . 
+. . . . f 1 1 1 1 1 1 1 f f . . 
+. . . . f 1 1 f 1 1 f 1 1 f f . 
+. . . . f 1 f f f f f f 1 1 f . 
+. . . . f 1 f 1 1 1 1 f 1 1 f . 
+. . . . f 1 1 1 1 1 1 1 1 f f . 
+. . . . . f f f 1 1 1 1 f f . . 
+. . . . . . . f f f f f f . . . 
+. . . . . . . . . f . . . . . . 
+. . . . . . f f f f f f f f . . 
+. . . . . . . . f f . . . . . . 
+. . . . . . . . f f . . . . . . 
+. . . . . . f f f f f . . . . . 
+. . . . . . f . . . f f . . . . 
+. . . . . f f . . . . f . . . . 
+`</field></block></value><value name="ADD2"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="screen_image_picker"><field name="img">img`
+. . . . . f f f f f f . . . . . 
+. . . . f f 1 1 1 1 f f f . . . 
+. . . . f 1 1 1 1 1 1 1 f f . . 
+. . . . f 1 1 f 1 1 f 1 1 f f . 
+. . . . f 1 f 9 1 1 9 9 1 1 f . 
+. . . . f 1 9 9 f f f 9 1 1 f . 
+. . . . f 1 9 1 1 1 1 9 1 f f . 
+. . . . . f f f 1 1 1 9 9 f . . 
+. . . 2 . 2 . f f f f f f . . . 
+. . . 2 2 2 . . . f . . . . . . 
+. . . . 7 f f f f f f f f f . . 
+. . . . 7 . . . f f . . . . . . 
+. . . . 7 . . . f f . . . . . . 
+. . . . . . f f f f f . . . . . 
+. . . . . . f . . . f f . . . . 
+. . . . . f f . . . . f . . . . 
+`</field></block></value></block></value><next><block type="gamesettile"><value name="index"><shadow type="colorindexpicker"><field name="index">7</field></shadow></value><value name="img"><shadow type="tile_image_picker"><field name="img">img`
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 f 7 7 7 7 7 7 7 7 f 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 f 7 7 7 7 7 7 7 7 7 7 7 7 f 7 
+7 f 7 7 7 7 7 7 7 7 7 7 7 7 f 7 
+7 7 f 7 7 7 7 7 7 7 7 7 7 7 f 7 
+7 7 f f 7 7 7 7 7 7 7 7 f f 7 7 
+7 7 7 f f 7 7 7 7 7 7 f f 7 7 7 
+7 7 7 7 7 f f f f f f 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+`</field></shadow></value><value name="wall"><shadow type="toggleOnOff"><field name="on">true</field></shadow></value><next><block type="variables_set"><field name="VAR" id="1U;)b9u)-}h427TcCye/">nextLevel</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow></value><next><block type="variables_set"><field name="VAR" id="sc.:xzv]:wobVpJ*!X[y">player1</field><value name="VALUE"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate"><value name="img"><shadow type="screen_image_picker"><field name="img">img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`</field></shadow><block type="screen_image_picker"><field name="img">img`
+. . . . 5 5 5 5 5 5 5 5 5 5 5 . 
+. . . 5 5 5 1 5 1 5 1 5 f 5 5 . 
+. . . 5 f 1 1 1 1 1 1 1 f f 5 5 
+. . . 5 f 1 1 f 1 1 f 1 1 f f 5 
+. . . 5 f 1 f 1 1 1 1 f 1 1 f 5 
+. . . 5 f 1 f f f f f f 1 1 f 5 
+. . . 5 f 1 1 1 1 1 1 1 1 f f 5 
+. . . 5 5 f f f 1 1 1 1 f 5 5 5 
+. . . 5 5 5 5 f f f f f 5 5 5 . 
+. . . . 5 . . 5 5 f 5 5 5 . 5 . 
+. . . . . . f f f f f f f f 5 5 
+. . . . . . . . f f . . . . . . 
+. . . . . . . . f f . . . . . . 
+. . . . . . f f f f f . . . . . 
+. . . . . . f . . . f f . . . . 
+. . . . . f f . . . . f . . . . 
+`</field></block></value><value name="kind"><shadow type="spritekind"><field name="MEMBER">Player</field></shadow></value></block></value><next><block type="game_control_sprite"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="2" _input_init="true"></mutation><value name="sprite"><block type="variables_get"><field name="VAR" id="sc.:xzv]:wobVpJ*!X[y">player1</field></block></value><value name="vx"><shadow type="math_number"><field name="NUM">100</field></shadow></value><value name="vy"><shadow type="math_number"><field name="NUM">100</field></shadow></value><next><block type="function_call"><mutation name="buildLevel" functionid="UoD#2MjbHR[?:I5)J+VK"/></block></next></block></next></block></next></block></next></block></next></block></statement></block></xml>
